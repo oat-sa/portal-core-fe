@@ -1,0 +1,7 @@
+{
+    "verbose": 2,
+    "testDir": "test",
+    "coverage": true,
+    "coverage-instrument-spec": "",
+    "port": 8082
+}
