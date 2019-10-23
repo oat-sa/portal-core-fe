@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = {
   resolve: {
     alias: {
-      depp: path.resolve(__dirname, '../src/'),
+      portal: path.resolve(__dirname, '../src/'),
     },
     extensions: ['.js']
   },

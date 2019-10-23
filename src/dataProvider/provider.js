@@ -11,8 +11,8 @@
  * @exports {Function} the dataProvider
  */
 
-import baseUrl from 'depp/helper/baseUrl';
-import corsHelper from 'depp/helper/cors';
+import baseUrl from 'portal/helper/baseUrl';
+import corsHelper from 'portal/helper/cors';
 
 const allowedMethods = ['GET', 'POST'];
 

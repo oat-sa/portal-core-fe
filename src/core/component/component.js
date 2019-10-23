@@ -20,7 +20,7 @@
  */
 import $ from 'jquery';
 import _ from 'lodash';
-import eventifier from 'depp/core/eventifier';
+import eventifier from 'portal/core/eventifier';
 import defaultTpl from './component.tpl';
 
 var _slice = [].slice;

@@ -7,7 +7,7 @@
  */
 
 import _ from "lodash";
-import eventifier from 'depp/core/eventifier';
+import eventifier from 'portal/core/eventifier';
 
 const defaults = {
     autoStart: false,

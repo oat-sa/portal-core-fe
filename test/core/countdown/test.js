@@ -9,7 +9,7 @@
  *
  */
 
-import countdownFactory from '../../../src/core/countdown';
+import countdownFactory from 'portal/core/countdown';
 
 
 QUnit.module('API');

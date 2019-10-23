@@ -2,7 +2,7 @@
  * Copyright (c) 2018-2019 (original work) Open Assessment Technologies SA ;
  */
 
-import dataProvider from '../../../src/dataProvider/provider';
+import dataProvider from 'portal/dataProvider/provider';
 
 /**
  * Unit test the module {@link dataProvider/provider}

@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2018 (original work) Open Assessment Technologies SA ;
  */
-import corsHelper from '../../../src/helper/cors';
+import corsHelper from 'portal/helper/cors';
 
 QUnit.config.reorder = false;
 QUnit.module('API');

@@ -6,7 +6,7 @@
  * UI Component to show feedbacks to the user
  *
  * @example
- * import { info, warning, danger } from 'depp/core/feedback'
+ * import { info, warning, danger } from 'portal/core/feedback'
  *
  * //display an info with an overlay, that close after 10s
  * info( 'Please wait while we configure something', { overlay : true, timeout: 10000 });
@@ -22,7 +22,7 @@
  */
 
 import _ from 'lodash';
-import component from 'depp/core/component/component';
+import component from 'portal/core/component/component';
 
 import feedbackTpl from './feedback.tpl';
 import feedbackContainerTpl from './feedback-container.tpl';

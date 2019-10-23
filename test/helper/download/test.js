@@ -4,7 +4,7 @@
 
 import _ from 'lodash';
 import $ from 'jquery';
-import downloadHelper from '../../../src/helper/download';
+import downloadHelper from 'portal/helper/download';
 import fixturesTpl from './fixtures.tpl';
 
 QUnit.config.reorder = false;

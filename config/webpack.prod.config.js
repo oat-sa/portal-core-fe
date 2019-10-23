@@ -24,7 +24,7 @@ const externals = {
 };
 const localExternals = entryArray.map(
   file =>
-  externals[`depp/${path
+  externals[`portal/${path
           .relative(srcDir, file)
           .replace(/\\/g, '/')
           .replace(/\.js$/, '')}`] = true

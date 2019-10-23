@@ -16,8 +16,8 @@
  * Copyright (c) 2014 (original work) Open Assessment Technologies SA ;
  */
 import $ from 'jquery';
-import Pluginifier from 'depp/core/pluginifier';
-import DataAttrHandler from 'depp/core/dataattrhandler';
+import Pluginifier from 'portal/core/pluginifier';
+import DataAttrHandler from 'portal/core/dataattrhandler';
 import './modal.scss';
 
 /**

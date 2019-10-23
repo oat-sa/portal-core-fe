@@ -9,7 +9,7 @@
  *
  */
 
-import baseUrl from '../../../src/helper/baseUrl';
+import baseUrl from 'portal/helper/baseUrl';
 
 
 QUnit.module('API');

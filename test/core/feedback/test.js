@@ -1,7 +1,7 @@
 /**
  * Copyright (c) 2018 (original work) Open Assessment Technologies SA ;
  */
-import { message, info, success, warning, danger, error} from 'depp/core/feedback/feedback';
+import { message, info, success, warning, danger, error} from 'portal/core/feedback/feedback';
 
 QUnit.config.reorder = false;
 QUnit.module('API');

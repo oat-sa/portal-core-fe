@@ -10,7 +10,7 @@
  */
 
 import $ from 'jquery';
-import componentFactory from '../../../src/core/component/component';
+import componentFactory from 'portal/core/component/component';
 
 
 QUnit.module('API');
