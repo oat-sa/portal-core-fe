@@ -1,0 +1,165 @@
+$success: rgb(14, 145, 75);
+$info: rgb(14, 93, 145);
+$warning: rgb(216, 174, 91);
+$danger: rgb(201, 96, 67);
+$error: rgb(186, 18, 43);
+
+$textColor: #222;
+$textHighlight: white;
+
+$uiGeneralContentBg: white;
+$uiGeneralContentBorder: #ddd;
+
+@mixin font-size($remPx, $important: false) {
+  @if $important == true {
+      font-size: ($remPx) * 1px !important;
+      font-size: ($remPx / 10) * 1rem !important;
+  }
+  @else {
+      font-size: ($remPx) * 1px;
+      font-size: ($remPx / 10) * 1rem;
+  }
+}
+@mixin border-radius($radius: 2) {
+  -moz-border-radius: $radius * 1px;
+  -webkit-border-radius: $radius * 1px;
+  border-radius: $radius * 1px;
+}
+/* Modal styles */
+.modal {
+  background-color: $uiGeneralContentBg;
+  border: 1px solid $uiGeneralContentBorder;
+  box-shadow: 3px 3px 5px #666666;
+  height: auto;
+  opacity: 0;
+  top: -1000px;
+  padding: 40px;
+  position: fixed;
+  z-index: 105002;
+  margin: auto;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+
+  .modal-close {
+      position: absolute;
+      right: 12px;
+      top: 10px;
+      cursor: pointer;
+      font-weight: bold;
+      color: $textColor;
+      &:hover{
+          opacity: 0.6;
+      }
+      .icon-close {
+          @include font-size(20);
+      }
+  }
+  // rewrite rules from _buttons.scss
+  button.modal-close {
+      color: $textColor !important;
+      background-color: transparent;
+      padding: 0;
+      height: 20px;
+      .icon-close {
+          padding: 0;
+      }
+  }
+
+  .modal-body{
+      h4 {
+          @include font-size(16);
+          margin-top: 0;
+          margin-bottom: 8px;
+      }
+      .content, .message {
+          margin-bottom: 8px;
+      }
+      .buttons{
+          top: 16px;
+          position: relative;
+
+          //flat button
+          button{
+              @include border-radius(2);
+              margin-left: 8px;
+              height: 36px;
+              text-shadow: none;
+              text-transform: uppercase;
+              color: $info !important;
+              background: none;
+              &:focus, &:hover{
+                  background: whiten($info, .85);
+              }
+          }
+      }
+  }
+
+  &[class^="icon-"], &[class*=" icon-"] { // supports any TAO icon
+      &:before {
+          @include font-size(44);
+          color: $info;
+          position: absolute;
+      }
+      // some predefined icons & their colours:
+      &.icon-result-nok {
+          &:before {
+              color: $error;
+          }
+      }
+      &.icon-warning {
+          &:before {
+              color: $danger;
+          }
+      }
+      &.icon-result-ok {
+          &:before {
+              color: $success;
+          }
+      }
+      // extra colour classes for convenience:
+      &.error {
+          &:before {
+              color: $error;
+          }
+      }
+      &.danger {
+          &:before {
+              color: $danger;
+          }
+      }
+      &.warning {
+          &:before {
+              color: $warning;
+          }
+      }
+      &.info {
+          &:before {
+              color: $info;
+          }
+      }
+      &.success {
+          &:before {
+              color: $success;
+          }
+      }
+      .modal-body {
+          line-height: 1.4;
+          margin-left: 8.5rem;
+      }
+  }
+}
+.modal-bg {
+  background: none repeat scroll 0 0 black;
+  opacity: 0.45;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=45)";
+  filter: alpha(opacity=45);
+  display: none;
+  position: fixed;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+  z-index: 100001;
+  overflow: hidden;
+}

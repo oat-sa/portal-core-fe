@@ -1,0 +1,55 @@
+
+#overlay {
+    background: #000;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    opacity: .3;
+    transition: opacity 300ms linear;
+
+    &.hidden {
+        opacity: 0;
+        display:none;
+        transition: opacity 300ms linear;
+    }
+}
+
+#feedbacks {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+
+    .alert {
+        flex: 1 1 auto;
+        z-index: 1100;
+        position: absolute;
+        min-width: 25rem;
+        max-width: 58rem;
+        border-radius: 3px;
+        top: -10rem;
+        opacity: 0;
+        transition: all 200ms linear;
+
+        &.open {
+            top: 3rem;
+            opacity: 1;
+            transition: all 350ms ease-out;
+        }
+
+        .icon {
+            width: 1.2rem;
+            height: 1.2rem;
+            position: absolute;
+            top: .85rem;
+            left: 1.25rem;
+        }
+
+        & > div {
+            //display: inline-block;
+            margin: 0 2rem;
+        }
+    }
+}
