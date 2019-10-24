@@ -22,8 +22,7 @@ const externals = {
   'jquery': true,
   'handlebars': true,
 };
-const localExternals = entryArray.map(
-  file =>
+entryArray.forEach( file =>
   externals[`portal/${path
           .relative(srcDir, file)
           .replace(/\\/g, '/')
