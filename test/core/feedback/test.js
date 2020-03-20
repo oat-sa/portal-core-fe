@@ -41,9 +41,9 @@ QUnit.test('info rendering', assert => {
     info('Hello world')
         .on('render', function() {
             const elt = this.getElement()[0];
-            assert.ok(elt.classList.contains('alert'));
-            assert.ok(elt.classList.contains('alert-info'));
-            assert.ok(elt.classList.contains('rendered'));
+            assert.ok(elt.classList.includes('alert'));
+            assert.ok(elt.classList.includes('alert-info'));
+            assert.ok(elt.classList.includes('rendered'));
             assert.equal(elt.querySelector('div').textContent.trim(), 'Hello world', 'The content matches');
             assert.ok(this.is('rendered'), 'The component is in a rendered state');
             assert.ok(!this.is('open'), 'The component is not yet opened');
@@ -76,9 +76,9 @@ QUnit.test('short success', assert => {
     success('awesome', { timeout : 400 })
         .on('render', function() {
             const elt = this.getElement()[0];
-            assert.ok(elt.classList.contains('alert'));
-            assert.ok(elt.classList.contains('alert-success'));
-            assert.ok(elt.classList.contains('rendered'));
+            assert.ok(elt.classList.includes('alert'));
+            assert.ok(elt.classList.includes('alert-success'));
+            assert.ok(elt.classList.includes('rendered'));
             assert.equal(elt.querySelector('div').textContent.trim(), 'awesome', 'The content matches');
             assert.ok(this.is('rendered'), 'The component is in a rendered state');
             assert.ok(!this.is('open'), 'The component is not yet opened');
@@ -108,14 +108,14 @@ QUnit.test('warning with overlay', assert => {
     assert.ok(container instanceof HTMLElement);
     assert.equal(container.children.length, 0);
     assert.ok(overlay instanceof HTMLElement);
-    assert.ok(overlay.classList.contains('hidden'), 'The overlay starts hidden');
+    assert.ok(overlay.classList.includes('hidden'), 'The overlay starts hidden');
 
     warning('be careful', { overlay : true })
         .on('render', function() {
             const elt = this.getElement()[0];
-            assert.ok(elt.classList.contains('alert'));
-            assert.ok(elt.classList.contains('alert-warning'));
-            assert.ok(elt.classList.contains('rendered'));
+            assert.ok(elt.classList.includes('alert'));
+            assert.ok(elt.classList.includes('alert-warning'));
+            assert.ok(elt.classList.includes('rendered'));
             assert.equal(elt.querySelector('div').textContent.trim(), 'be careful', 'The content matches');
             assert.ok(this.is('rendered'), 'The component is in a rendered state');
             assert.ok(!this.is('open'), 'The component is not yet opened');
@@ -125,13 +125,13 @@ QUnit.test('warning with overlay', assert => {
             const closeElt = elt.querySelector('.close');
             assert.ok(closeElt instanceof HTMLElement);
             assert.ok(this.is('open'), 'The component is now opened');
-            assert.ok( ! overlay.classList.contains('hidden'), 'The ovelay is shown');
+            assert.ok( ! overlay.classList.includes('hidden'), 'The ovelay is shown');
 
             closeElt.click();
         })
         .on('close', function() {
             assert.ok( ! this.is('open'), 'The component is closed');
-            assert.ok(overlay.classList.contains('hidden'), 'The overlay is hidden back');
+            assert.ok(overlay.classList.includes('hidden'), 'The overlay is hidden back');
             this.destroy();
         })
         .on('destroy', function(){
@@ -151,9 +151,9 @@ QUnit.test('structured error', assert => {
     error({ title : 'Something went wrong', content: 'Unable to contact the server'})
         .on('render', function() {
             const elt = this.getElement()[0];
-            assert.ok(elt.classList.contains('alert'));
-            assert.ok(elt.classList.contains('alert-danger'));
-            assert.ok(elt.classList.contains('rendered'));
+            assert.ok(elt.classList.includes('alert'));
+            assert.ok(elt.classList.includes('alert-danger'));
+            assert.ok(elt.classList.includes('rendered'));
 
             assert.equal(elt.querySelector('div').textContent.replace(/\s+/g, ' ').trim(), 'Something went wrong Unable to contact the server', 'The content matches');
             assert.equal(elt.querySelector('div > strong').textContent.trim(), 'Something went wrong', 'The title matches');
