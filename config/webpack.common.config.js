@@ -8,16 +8,16 @@ module.exports = {
     },
     extensions: ['.js']
   },
-    externals: {
-        fs: 'fs-extra',
-        async: 'async',
-        module: 'module',
-        lodash: 'lodash',
-        context: path.resolve(__dirname, '../dist/externals/module'),
-        i18n: path.resolve(__dirname, '../dist/externals/i18n'),
-        'idb-wrapper': 'idb-wrapper',
-        'lib/uuid': 'uuid'
-    },
+  externals: {
+    fs: 'fs-extra',
+    async: 'async',
+    module: 'module',
+    lodash: 'lodash',
+    i18n: 'i18n',
+    context: path.resolve(__dirname, '../dist/externals/module'),
+    'idb-wrapper': 'idb-wrapper',
+    'lib/uuid': 'uuid'
+  },
   module: {
     rules: [
       {
