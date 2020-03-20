@@ -4,9 +4,20 @@ module.exports = {
   resolve: {
     alias: {
       portal: path.resolve(__dirname, '../src/'),
+      core: path.resolve(__dirname, '../src/core/')
     },
     extensions: ['.js']
   },
+    externals: {
+        fs: 'fs-extra',
+        async: 'async',
+        module: 'module',
+        lodash: 'lodash',
+        context: path.resolve(__dirname, '../dist/externals/module'),
+        i18n: path.resolve(__dirname, '../dist/externals/i18n'),
+        'idb-wrapper': 'idb-wrapper',
+        'lib/uuid': 'uuid'
+    },
   module: {
     rules: [
       {
@@ -46,7 +57,7 @@ module.exports = {
         test: /\.tpl/,
         loader: 'handlebars-loader',
       },
-      { 
+      {
         test: /\.json/,
         loader: 'json-loader',
       }
