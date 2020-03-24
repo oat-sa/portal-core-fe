@@ -19,11 +19,12 @@
 /**
  * @author Tamas Besenyei <tamas@taotesting.com>
  */
-'use strict';
 
 import $ from 'jquery';
+import mockjax from 'jquery-mockjax';
 import jwtTokenHandlerFactory from 'core/jwt/jwtTokenHandler';
-import 'jquery.mockjax';
+
+mockjax($, window);
 
 QUnit.module('factory');
 
