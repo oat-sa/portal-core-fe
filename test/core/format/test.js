@@ -15,7 +15,6 @@
  *
  * Copyright (c) 2020 (original work) Open Assessment Technologies SA;
  */
-'use strict';
 
 import format from 'core/format';
 

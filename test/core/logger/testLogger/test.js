@@ -18,7 +18,6 @@
 /**
  * @author Christophe Noël <christophe@taotesting.com>
  */
-'use strict';
 
 import testLogger from '../testLogger';
 

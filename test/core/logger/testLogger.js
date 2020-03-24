@@ -22,7 +22,6 @@
  *
  * @author Christophe Noël <christophe@taotesting.com>
  */
-'use strict';
 
 import _ from 'lodash';
 

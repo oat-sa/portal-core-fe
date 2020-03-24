@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2018-2019 (original work) Open Assessment Technologies SA ;
+ * Copyright (c) 2018-2020 (original work) Open Assessment Technologies SA ;
  */
 
 /**
@@ -7,7 +7,7 @@
  */
 
 import _ from "lodash";
-import eventifier from 'portal/core/eventifier';
+import eventifier from 'core/eventifier';
 
 const defaults = {
     autoStart: false,

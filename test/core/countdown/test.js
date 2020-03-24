@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2018 (original work) Open Assessment Technologies SA ;
+ * Copyright (c) 2018-2020 (original work) Open Assessment Technologies SA ;
  */
 
 /**
@@ -9,7 +9,7 @@
  *
  */
 
-import countdownFactory from 'portal/core/countdown';
+import countdownFactory from 'core/countdown';
 
 
 QUnit.module('API');
