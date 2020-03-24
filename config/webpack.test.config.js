@@ -11,6 +11,12 @@ const entryTestsObject = entryArray.reduce((acc, item) => {
 }, {});
 
 module.exports = merge(loaders, {
+  resolve: {
+    alias: {
+      test: path.resolve(__dirname, '../test/'),
+      'jquery.mockjax': path.resolve(__dirname, '../node_modules/jquery-mockjax/dist/jquery.mockjax')
+    },
+  },
   mode: 'development',
   devtool: 'inline-source-map',
   entry:  entryTestsObject,
