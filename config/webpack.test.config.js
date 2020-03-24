@@ -14,7 +14,10 @@ module.exports = merge(loaders, {
   resolve: {
     alias: {
       test: path.resolve(__dirname, '../test/'),
-      'jquery.mockjax': path.resolve(__dirname, '../node_modules/jquery-mockjax/dist/jquery.mockjax')
+      'lib/uuid': 'uuid',
+      i18n: path.resolve(__dirname, '../test/i18n'),
+      module: path.resolve(__dirname, '../test/module'),
+      context: path.resolve(__dirname, '../test/module')
     },
   },
   mode: 'development',
