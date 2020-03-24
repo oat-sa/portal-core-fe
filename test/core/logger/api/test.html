@@ -3,16 +3,10 @@
     <head>
         <meta charset="utf-8" />
         <title>Test - Logger</title>
-        <script type="text/javascript" src="/environment/require.js"></script>
-        <script type="text/javascript">
-            require(['/environment/config.js'], function() {
-                require(['qunitEnv'], function() {
-                    require(['test/core/logger/api/test'], function() {
-                        QUnit.start();
-                    });
-                });
-            });
-        </script>
+        <link rel="stylesheet" href="../../../../node_modules/qunit/qunit/qunit.css" />
+        <script src="../../../../node_modules/qunit/qunit/qunit.js"></script>
+        <script src="../../../../lib/qunit2-parametrize.js"></script>
+        <script src="./test.bundle.js"></script>
     </head>
     <body>
         <div id="qunit"></div>
