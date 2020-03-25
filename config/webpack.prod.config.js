@@ -23,6 +23,7 @@ const externals = {
   handlebars: true,
   i18n: true,
   module: true,
+  moment: true,
   context: path.resolve(__dirname, '../dist/externals/module'),
   'idb-wrapper': 'idb-wrapper',
   'lib/uuid': 'uuid'
