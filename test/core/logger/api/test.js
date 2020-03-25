@@ -119,57 +119,33 @@ QUnit.test('logger instance', function(assert) {
     assert.equal(typeof logger.child, 'function', 'The logger has a child method');
 });
 
-QUnit.module('providers', {
-    beforeEach: function(assert) {
+QUnit.module('providers', function(hooks) {
+    hooks.beforeEach(function() {
         loggerFactory.providers = false;
-    }
-});
-
-QUnit.test('load providers', function(assert) {
-    var ready = assert.async();
-    var p;
-    assert.expect(5);
-
-    assert.equal(loggerFactory.providers, false, 'No providers');
-
-    p = loggerFactory.load({ 'test/core/logger/api/mlogck': {} });
-    assert.ok(p instanceof Promise, 'the load method returns a Promise');
-
-    p.then(function() {
-        assert.equal(loggerFactory.providers.length, 1, 'A provider is registered');
-        assert.equal(typeof loggerFactory.providers[0], 'object', 'The registered provider is an object');
-        assert.equal(
-            typeof loggerFactory.providers[0].log,
-            'function',
-            'The registered provider has a log function'
-        );
-        ready();
-    }).catch(function(err) {
-        assert.ok(false, err.message);
     });
-});
 
-QUnit.test('wrong providers', function(assert) {
-    var ready = assert.async();
-    var p;
-    assert.expect(3);
+    QUnit.test('wrong providers', function(assert) {
+        var ready = assert.async();
+        var p;
+        assert.expect(3);
 
-    assert.equal(loggerFactory.providers, false, 'No providers');
+        assert.equal(loggerFactory.providers, false, 'No providers');
 
-    p = loggerFactory.load({ 'test/core/logger/api/test': {} });
-    assert.ok(p instanceof Promise, 'the load method returns a Promise');
+        p = loggerFactory.load({ 'test/core/logger/api/test': {} });
+        assert.ok(p instanceof Promise, 'the load method returns a Promise');
 
-    p.then(function() {
-        assert.ok(false, 'The method should not resolve');
-        ready();
-    }).catch(function(err) {
-        assert.ok(err instanceof TypeError, 'The given provider is not a logger');
-        ready();
+        p.then(function() {
+            assert.ok(false, 'The method should not resolve');
+            ready();
+        }).catch(function(err) {
+            assert.ok(err instanceof TypeError, 'The given provider is not a logger');
+            ready();
+        });
     });
 });
 
 QUnit.module('logger behavior', {
-    beforeEach: function(assert) {
+    beforeEach: function() {
         loggerFactory.providers = [];
     }
 });
