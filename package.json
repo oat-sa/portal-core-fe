@@ -5,7 +5,7 @@
   "scripts": {
     "build": "webpack --config ./config/webpack.prod.config.js",
     "build:watch": "webpack --config ./config/webpack.prod.config.js --watch --info-verbosity verbose",
-    "test": "npx qunit-testrunner",
+    "test": "npm run test:build && npx qunit-testrunner",
     "test:stats": "npx qunit-testrunner --reporter=stats",
     "test:build": "webpack --config ./config/webpack.test.config.js",
     "test:watch": "webpack-dev-server --config ./config/webpack.test.config.js",
