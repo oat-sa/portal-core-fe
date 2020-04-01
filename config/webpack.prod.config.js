@@ -18,9 +18,15 @@ const entryObject = entryArray.reduce((acc, item) => {
  * Define all modules as external, so rollup won't bundle them together.
  */
 const externals = {
-  'lodash': true,
-  'jquery': true,
-  'handlebars': true,
+  lodash: true,
+  jquery: true,
+  handlebars: true,
+  i18n: true,
+  module: true,
+  moment: true,
+  context: path.resolve(__dirname, '../dist/externals/module'),
+  'idb-wrapper': 'idb-wrapper',
+  'lib/uuid': 'uuid'
 };
 entryArray.forEach( file =>
   externals[`portal/${path

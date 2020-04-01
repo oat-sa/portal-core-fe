@@ -4,6 +4,7 @@ module.exports = {
   resolve: {
     alias: {
       portal: path.resolve(__dirname, '../src/'),
+      core: path.resolve(__dirname, '../src/core/')
     },
     extensions: ['.js']
   },
@@ -46,7 +47,7 @@ module.exports = {
         test: /\.tpl/,
         loader: 'handlebars-loader',
       },
-      { 
+      {
         test: /\.json/,
         loader: 'json-loader',
       }
