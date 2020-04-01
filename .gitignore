@@ -65,3 +65,6 @@ test.bundle.js
 
 # bundles
 dist
+
+# IntelliJ IDEA
+.idea

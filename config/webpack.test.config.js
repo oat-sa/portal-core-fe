@@ -11,6 +11,15 @@ const entryTestsObject = entryArray.reduce((acc, item) => {
 }, {});
 
 module.exports = merge(loaders, {
+  resolve: {
+    alias: {
+      test: path.resolve(__dirname, '../test/'),
+      'lib/uuid': 'uuid',
+      i18n: path.resolve(__dirname, '../test/i18n'),
+      module: path.resolve(__dirname, '../test/module'),
+      context: path.resolve(__dirname, '../test/module')
+    },
+  },
   mode: 'development',
   devtool: 'inline-source-map',
   entry:  entryTestsObject,
