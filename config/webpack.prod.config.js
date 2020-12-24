@@ -24,15 +24,14 @@ const externals = {
   i18n: true,
   module: true,
   moment: true,
-  context: path.resolve(__dirname, '../dist/externals/module'),
   'idb-wrapper': 'idb-wrapper',
   'lib/uuid': 'uuid'
 };
 entryArray.forEach( file =>
-  externals[`portal/${path
-          .relative(srcDir, file)
-          .replace(/\\/g, '/')
-          .replace(/\.js$/, '')}`] = true
+    externals[`portal/${path
+        .relative(srcDir, file)
+        .replace(/\\/g, '/')
+        .replace(/\.js$/, '')}`] = true
 );
 
 module.exports = merge(loaders,  {
@@ -40,7 +39,7 @@ module.exports = merge(loaders,  {
   entry:  entryObject,
   output: {
     path: path.resolve(__dirname, '../dist'),
-    publicPath: path.resolve(__dirname, '../dist'),
+    publicPath: '' ,
     filename: '[name]',
     libraryTarget: 'umd',
   },
