@@ -4,7 +4,8 @@ module.exports = {
   resolve: {
     alias: {
       portal: path.resolve(__dirname, '../src/'),
-      core: path.resolve(__dirname, '../src/core/')
+      core: path.resolve(__dirname, '../src/core/'),
+      context: path.resolve(__dirname, '../src/externals/module'),
     },
     extensions: ['.js']
   },
