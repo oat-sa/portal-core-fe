@@ -187,7 +187,7 @@ export default function moduleLoaderFactory(requiredModules, validate, specs) {
                         return Promise
                             .all( amdModules.map( module => (
                                 //eslint-disable
-                                import(/* webpackIgnore: true */ `${module}`)
+                                import( `${module}`)
                                 //eslint-enable
                             )))
                             .then( loadedModules => Promise.resolve(...loadModules) );
