@@ -25,7 +25,7 @@
  *   - the responseBody:
  *      { success : true, data : [the results]}
  *      { success : false, data : {Exception}, message : 'Something went wrong' }
- *      { success : false, code : X, message : 'Something went wrong' }
+ *      { success : false, errorCode : X, message : 'Something went wrong' }
  *   - 204 for empty content
  *   - 403 if CSRF token validation fails
  *
@@ -49,12 +49,23 @@ const queue = promiseQueue();
 const logger = loggerFactory('core/request');
 
 /**
+ * @typedef RequestErrorCustomFields
+ * @property {Object} response - the server body response as plain object
+ * @property {Boolean} sent - the sent status of http request
+ * @property {String} source
+ * @property {Number} code - the response HTTP code
+ * @property {Number} status - the response HTTP code (for backwards-compatibility, can use both `code` or `status` property, they are identical)
+ */
+/**
+ * @typedef {Error & RequestErrorCustomFields} RequestError
+ */
+/**
  * Create a new error based on the given response
  * @param {Object} response - the server body response as plain object
  * @param {String} fallbackMessage - the error message in case the response isn't correct
  * @param {Number} httpCode - the response HTTP code
  * @param {Boolean} httpSent - the sent status
- * @returns {Error} the new error
+ * @returns {RequestError} the new error
  */
 const createError = (response, fallbackMessage, httpCode, httpSent) => {
     let err;
@@ -69,6 +80,7 @@ const createError = (response, fallbackMessage, httpCode, httpSent) => {
 
     if (_.isNumber(httpCode)) {
         err.code = httpCode;
+        err.status = httpCode;
     }
     return err;
 };
@@ -88,7 +100,7 @@ const createError = (response, fallbackMessage, httpCode, httpSent) => {
  * @param {Number}  [options.timeout] - timeout in seconds for the AJAX request
  * @param {Object} [options.jwtTokenHandler] - JWT token handler instance
  * @param {string} [options.logLevel] - Minimum log level for request
- * @returns {Promise} resolves with response, or reject if something went wrong
+ * @returns {Promise} resolves with response, or reject with {@link RequestError} if something went wrong
  */
 export default function request(options) {
     // Allow external config to override user option
