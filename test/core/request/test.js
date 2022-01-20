@@ -625,6 +625,7 @@ QUnit.cases
                     .catch(function(error) {
                         var expected = errors[caseData.url];
                         assert.equal(error.code, expected.code, 'The correct error code');
+                        assert.equal(error.status, expected.code, 'The correct error status');
                         assert.equal(error.sent, expected.sent, 'The correct error sent status');
                         assert.equal(error.source, expected.source, 'The correct error source');
                         assert.equal(error.message, expected.message, 'The correct error message');
@@ -804,7 +805,8 @@ QUnit.test('Token refreshing and retry only one time after 401', function(assert
         assert.equal(setAccessTokenResponse, true, 'access token stored successfully');
         assert.equal(setRefreshTokenResponse, true, 'refresh token stored successfully');
         request({ url: '//endpoint', jwtTokenHandler: this.handler, noToken: true }).catch(error => {
-            assert.equal(error.response.code, 401, 'should get back original status code');
+            assert.equal(error.response.code, 401, 'should get back original status (code)');
+            assert.equal(error.response.status, 401, 'should get back original status (status)');
             assert.deepEqual(error.response.error, originalError.error, 'should get back original api error');
             done();
         });
@@ -852,7 +854,8 @@ QUnit.test('Get back original error, if token refresh was not success', function
         assert.equal(setAccessTokenResponse, true, 'access token stored successfully');
         assert.equal(setRefreshTokenResponse, true, 'refresh token stored successfully');
         request({ url: '//endpoint', jwtTokenHandler: this.handler, noToken: true }).catch(error => {
-            assert.equal(error.response.code, 401, 'should get back original status code');
+            assert.equal(error.response.code, 401, 'should get back original status (code)');
+            assert.equal(error.response.status, 401, 'should get back original status (status)');
             assert.deepEqual(error.response.error, originalError.error, 'should get back original api error');
             done();
         });
