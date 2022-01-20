@@ -33,7 +33,6 @@
  */
 import $ from 'jquery';
 import _ from 'lodash';
-import __ from 'i18n';
 import module from 'module';
 import context from 'context';
 import promiseQueue from 'core/promiseQueue';
@@ -258,7 +257,7 @@ export default function request(options) {
                                 reject(
                                     createError(
                                         response,
-                                        __('The server has sent an empty response'),
+                                        'The server has sent an empty response',
                                         xhr.status,
                                         xhr.readyState > 0
                                     )
@@ -312,8 +311,7 @@ export default function request(options) {
                         code: xhr.status,
                         sent: xhr.readyState > 0,
                         type: 'error',
-                        textStatus: textStatus,
-                        message: errorThrown || __('An error occurred!')
+                        textStatus: textStatus
                     };
 
                     const enhancedResponse = Object.assign({}, responseExtras, response);
