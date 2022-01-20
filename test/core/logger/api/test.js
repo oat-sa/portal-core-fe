@@ -138,7 +138,7 @@ QUnit.module('providers', function(hooks) {
             assert.ok(false, 'The method should not resolve');
             ready();
         }).catch(function(err) {
-            assert.ok(err instanceof TypeError, 'The given provider is not a logger');
+            assert.ok(err instanceof Error, 'The given provider is not a logger');
             ready();
         });
     });
