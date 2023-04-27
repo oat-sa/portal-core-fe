@@ -38,7 +38,7 @@
     "devDependencies": {
         "@babel/core": "^7.21.4",
         "@babel/preset-env": "^7.21.4",
-        "@oat-sa/tao-qunit-testrunner": "^1.0.3",
+        "@oat-sa/tao-qunit-testrunner": "https://github.com/oat-sa/tao-qunit-testrunner-fe.git#feature/ADF-1417/upgrade-to-node18",
         "babel-loader": "^8.0.6",
         "clean-webpack-plugin": "^3.0.0",
         "css-loader": "^3.2.0",
