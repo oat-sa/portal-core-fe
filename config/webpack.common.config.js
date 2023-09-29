@@ -7,7 +7,8 @@ module.exports = {
       core: path.resolve(__dirname, '../src/core/'),
       context: path.resolve(__dirname, '../src/externals/module'),
     },
-    extensions: ['.js']
+    extensions: ['.js'],
+    fallback: { "url": require.resolve("url/") }
   },
   module: {
     rules: [
@@ -29,10 +30,7 @@ module.exports = {
             },
           },
           {
-            loader: 'source-map-loader',
-            options: {
-              enforce: 'pre'
-            }
+            loader: 'source-map-loader'
           }
         ]
       },
