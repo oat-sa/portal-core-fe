@@ -7,7 +7,8 @@ module.exports = {
       core: path.resolve(__dirname, '../src/core/'),
       context: path.resolve(__dirname, '../src/externals/module'),
     },
-    extensions: ['.js']
+    extensions: ['.js'],
+    fallback: { "url": false }
   },
   module: {
     rules: [
