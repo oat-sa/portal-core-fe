@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/oat-sa/portal-core-fe.git"
+    "url": "git+https://github.com/oat-sa/portal-core-fex.git"
   },
   "keywords": [
     "tao",
@@ -23,9 +23,9 @@
   ],
   "license": "GPL-2.0",
   "bugs": {
-    "url": "https://github.com/oat-sa/portal-core-fe/issues"
+    "url": "https://github.com/oat-sa/portal-core-fex/issues"
   },
-  "homepage": "https://github.com/oat-sa/portal-core-fe#readme",
+  "homepage": "https://github.com/oat-sa/portal-core-fex#readme",
   "dependencies": {
     "fs-extra": "^8.1.0",
     "handlebars": "^4.7.8",
